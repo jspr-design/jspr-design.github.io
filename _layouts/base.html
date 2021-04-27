@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    {% include favicons.html %}
+
+    {% include open-graph.html %}
+
+    {% if site.google-font %}
+      <!-- Google Font -->
+      <link href="{{ site.google-font }}" rel="stylesheet">
+    {% endif %}
+
+    {% if site.fontawesome %}
+      <!-- FontAwesome 5 -->
+      <script src="{{ site.fontawesome }}" crossorigin="anonymous"></script>
+    {% endif %}
+
+    {% if site.material-icon %}
+      <!-- Google Material Icon -->
+      <script src="{{ site.material-icon }}" crossorigin="anonymous"></script>
+    {% endif %}
+
+    <!-- STYLESHEET -->
+
+    <!-- Main -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/{{ site.stylesheet | default: "main" }}.css">
+
+    <!-- Global -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/global.css">
+
+    {% if layout.custom-stylesheet %}
+      <!-- Layout Specific CSS -->
+      <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/{{ layout.custom-stylesheet }}.css">
+    {% endif %}
+
+    {% if page.custom-stylesheet %}
+      <!-- Page Specific CSS -->
+      <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/{{ page.custom-stylesheet }}.css">
+    {% endif %}
+
+    <!-- PLUGINS -->
+
+    {% if site.isPWA %}
+      <!-- PWA -->
+      <link rel="manifest" href="{{ site.baseurl }}/manifest.json">
+    {% endif %}
+
+  </head>
+
+  <body>
+
+    {% if site.swup-animation %}
+      <div class="transition-{% if page.transition %}{{page.transition}}{% else %}{{ layout.transition }}{%endif%}" id="swup">
+        {{ content }}
+      </div>
+      {% else %}
+      {{ content }}
+    {% endif %}
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="{{ site.baseurl }}/assets/js/functions.js"></script>
+
+    <!-- PLUGINS -->
+
+    {% if site.swup-animation %}
+      <script defer src="{{ site.swup-animation }}"></script>
+      <script defer src="{{ site.baseurl }}/assets/plugins/swup/js/swup.js"></script>
+    {% endif %}
+
+
+
+
+
+
+
+
+
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v8.0'
+        });
+      };
+
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Your Chat Plugin code -->
+    <div class="fb-customerchat"
+      attribution=setup_tool
+      page_id="106147657877729"
+      theme_color="#262626">
+    </div>
+
+
+    <!-- Calendly link widget begin -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+    <!-- Calendly link widget end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+
+</html>

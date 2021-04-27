@@ -1,0 +1,35 @@
+---
+layout: base
+layout-type: #container | container-fluid
+custom-stylesheet: 
+---
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="{{ site.baseurl }}/"></a>
+
+    <a class="navbar-brand" href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/assets/img/logo_jsprlprd-dark.svg" height="20"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      {% include components/molecules/nav.html data=site.data.navigation.global %}
+      <a class="btn btn-primary" href=""  onclick="Calendly.initPopupWidget({url: 'https://calendly.com/jsprlprd'});return false;">Contact Us</a>
+    </div>
+  
+  </div>
+</nav>
+
+<main class="{% if page.layout-type %}{{page.layout-type}}{% else %}{{ layout.layout-type | default: 'container'}}{%endif%}">
+  {{ content }}
+
+
+  {% if page.faq %}
+    {% include components/faq.html %}
+
+  {% endif %}
+
+</main>
+
+{% include components/footer.html %}

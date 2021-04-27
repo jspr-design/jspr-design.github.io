@@ -1,0 +1,31 @@
+---
+layout: default
+layout-type: #container | container-fluid
+custom-stylesheet: 
+---
+
+<a href="">Back</a>
+
+
+<div class="heading">
+  <p>{{ page.client }}</p>
+  <h1>{{ page.product }}</h1>
+  <p>{{ page.description }}</p>
+  <ul class="list-inline">
+    {% for tag in page.tags %}
+      <li class="list-inline-item"><span class="badge badge-primary">{{ tag }}</span></li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% if page.live-site %}
+  <a class="btn btn-primary" target="_blank" href="{{ page.live-site }}">View Site</a>
+{% endif %}
+
+{% if work.thumbnail %}
+  <img class="img-fluid" loading="lazy" src="{{ site.baseurl }}/assets/img/{{ work.thumbnail }}" alt="" />
+{% else %}
+  <img class="img-fluid" loading="lazy" src="https://dummyimage.com/1920X16:9/fafafa.png" alt="" />
+{% endif %}
+
+{{ content }}

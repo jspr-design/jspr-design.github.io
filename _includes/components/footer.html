@@ -1,0 +1,34 @@
+<footer class="bg-dark text-white">
+    <div class="container">
+        <div class="heading">
+            <h1>Have a project in mind? Let's work together.</h1>
+            <a class="btn btn-primary" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/jsprlprd'});return false;">Contact Us</a>
+        </div>
+
+        <!-- <hr> -->
+        <div class="row">
+            <div class="col-lg-6">
+                <!-- <p>JSPR.Design</p> -->
+                <img class="mb-3" src="{{ site.baseurl }}/assets/img/logo_jsprlprd-light.svg" height="16">
+                <p>We are a design and development agency specialized in creating simple and performant user interfaces for startups and world-leading companies.</p>
+            </div>
+            <div class="col-lg-3">
+                <ul>
+                    {% for link in site.data.navigation.main-links %}
+                        <li><a href="{{ link.url }}">{{ link.text }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <ul>
+                    {% for link in site.data.navigation.social-media %}
+                        <li><a href="{{ link.url }}">{{ link.text }}</a></li>
+                    {% endfor %}
+                </ul>
+                {% include components/molecules/nav.html data=site.data.navigation.social-media %}
+            </div>
+        </div>
+        <hr>
+        <p>Handcrafted with ❤ by <a href="https://www.jsprlprd.com">Jasper Lepardo</a></p>
+    </div>
+</footer>

@@ -1,0 +1,121 @@
+---
+layout: default
+layout-type: container-fluid
+custom-stylesheet: 
+transition: fade
+
+faq: true
+
+---
+
+<div class="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="heading">
+                    <h1 class="display-1">Everything Begins With An Idea.</h1>
+                    <p class="lead">We help our clients to develop their product into next level. This is not about designs, it's all about business. We bring their ideas into real.</p>
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/jsprlprd'});return false;">Get in touch with us</a>
+                </div>
+            </div>
+        </div>
+        <img class="img-fluid" loading="lazy" src="https://dummyimage.com/1920X16:9/fafafa.png" alt="" />
+    </div>
+</div>
+
+
+<div class="wrapper">
+    <div class="container">
+        <div class="heading">
+            <h1 class="h1">How We Work.</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <img loading="lazy" src="https://dummyimage.com/72/fafafa.png" alt="" />
+                <h3>Strategy</h3>
+                <p>In our continuous strategy process, we analyze customer needs, identify general product problems and advise on important future decisions.</p>
+            </div>
+            <div class="col-lg-3">
+                <img loading="lazy" src="https://dummyimage.com/72/fafafa.png" alt="" />
+                <h3>Design</h3>
+                <p>Our design process is about making complex solutions simple. We combine thoughtful user experience with clear visual strength.</p>
+            </div>
+            <div class="col-lg-3">
+                <img loading="lazy" src="https://dummyimage.com/72/fafafa.png" alt="" />
+                <h3>Development</h3>
+                <p>We bring products to life using the latest technologies while focusing on a perfect visual realization and clean and maintainable code.</p>
+            </div>
+            <div class="col-lg-3">
+                <img loading="lazy" src="https://dummyimage.com/72/fafafa.png" alt="" />
+                <h3>Improvement</h3>
+                <p>In an ever-changing digital world, there is always space for growth. We test, analyze and optimize your product to make it even better.</p>
+            </div>
+        </div>
+        <!-- <a class="btn btn-primary" href="">Explore our services</a> -->
+    </div>
+</div>
+
+<div class="wrapper bg-light">
+    <div class="container">
+    <!-- <div class="heading">
+        <h1>Featured Project.</h1>
+    </div> -->
+
+    <ul class="list-unstyled">
+        {% assign works = site.works | where: "categories", "featured"%}
+        {% for work in works %}
+            <li>
+                <div class="row">
+
+                    <div class="col-lg-6 align-self-center" style="z-index: 1; ">
+                        <!-- <ul class="list-inline">
+                            {% for tag in work.tags %}
+                                <li class="list-inline-item"><span class="badge badge-primary">{{ tag }}</span></li>
+                            {% endfor %}
+                        </ul> -->
+                        <p><b>{{ work.client }}</b></p>
+                        <h3 class="card-title">{{ work.product }}</h3>
+                        <p class="card-text">{{ work.description }}</p>
+                        <a href="{{ work.url }}">Read Case Study</a>
+                    </div>
+
+
+                    <div class="col-lg-8" style="margin-right: -33.33%" >
+                        {% if work.thumbnail %}
+                            <img class="img-fluid" loading="lazy" src="{{ site.baseurl }}/assets/img/{{ work.thumbnail }}" alt="" />
+                            {% else %}
+                            <img class="img-fluid" loading="lazy" src="https://dummyimage.com/1200X4:3/eeeeee.png" alt="" />
+                        {% endif %}
+                    </div>
+
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+    
+    <!-- <div class="card-columns">
+        {% for work in site.works %}
+          <a class="card shadow-sm" id="{{ work.name }}" target="_blank" href="{{ work.external-url | default: work.url }}">
+            {% if work.thumbnail %}
+              <img class="card-img-top" loading="lazy" src="{{ site.baseurl }}/assets/img/{{ work.thumbnail }}" alt="" />
+              {% else %}
+              <img class="card-img-top" loading="lazy" src="https://dummyimage.com/1200X4:3/fafafa.png" alt="" />
+            {% endif %}
+            <div class="card-body">
+              <p><b>{{ work.client }}</b></p>
+              <h3 class="card-title"><b>{{ work.product }}</b></h3>
+              <p class="card-text">{{ work.description }}</p>
+              <ul class="list-inline">
+                {% for tag in work.tags %}
+                  <li class="list-inline-item"><span class="badge badge-primary">{{ tag }}</span></li>
+                {% endfor %}
+              </ul>
+            </div>
+          </a>
+        {% endfor %}
+    </div> -->
+    <a href="">See other works</a>
+    </div>
+
+</div>
+
