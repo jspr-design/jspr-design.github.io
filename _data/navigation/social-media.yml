@@ -1,12 +1,18 @@
 - text: Behance
   icon: fab fa-behance-square
-  url: https://www.behance.net/jsprlprd/
+  url: https://www.behance.net/jspr-design/
 - text: Dribble
   icon: fab fa-dribbble-square
-  url: https://dribbble.com/jsprlprd/
+  url: https://dribbble.com/jspr-design/
 - text: Facebook
   icon: fab fa-facebook-square
   url: https://www.facebook.com/jspr.design/
 - text: Instagram
   icon: fab fa-instagram-square
   url: https://www.instagram.com/jspr.design/
+- text: LinkedIn
+  icon: fab fa-linkedin
+  url: https://www.linkedin.com/company/jspr-design/
+- text: Figma
+  icon: 
+  url: https://www.figma.com/@jsprdesign
