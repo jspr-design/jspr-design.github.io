@@ -17,28 +17,27 @@ faq: true
     {% for work in site.works %}
         <li class="py-5">
             <div class="row">
-                <div class="col-lg-8">
-                    {% if work.thumbnail %}
+                <div class="col-lg-7">
+                    <img class="img-fluid" loading="lazy" src="{{ site.baseurl }}/assets/img/{{ work.title | downcase | replace: ' ','-' }}.png" alt="" />
+                    <!-- {% if work.thumbnail %}
                         <img class="img-fluid" loading="lazy" src="{{ site.baseurl }}/assets/img/{{ work.thumbnail }}" alt="" />
                         {% else %}
                         <img class="img-fluid" loading="lazy" src="https://dummyimage.com/1200X4:3/fafafa.png" alt="" />
-                    {% endif %}
+                    {% endif %} -->
                 </div>
                 
-                <div class="col-lg-6 align-self-center" style="margin-left: -16.6666666667%;">
-                    <div class="p-5 bg-white shadow-sm">
-                        <!-- <ul class="list-inline">
-                            {% for tag in work.tags %}
-                                <li class="list-inline-item"><span class="badge badge-primary">{{ tag }}</span></li>
-                            {% endfor %}
-                        </ul> -->
-                        <h3 class="card-title"><b>{{ work.client }}</b></h3>
-                        <p class="card-text">{{ work.description }}</p>
-                        <a href="{{ work.url }}">Show Case Study</a>
-                        {% if work.live-site %}
-                            <a target="_blank" href="{{ page.live-site }}">View Site</a>
-                        {% endif %}
-                    </div>
+                <div class="col-lg-5 align-self-center">
+                    <!-- <ul class="list-inline">
+                        {% for tag in work.tags %}
+                            <li class="list-inline-item"><span class="badge badge-primary">{{ tag }}</span></li>
+                        {% endfor %}
+                    </ul> -->
+                    <h3 class="card-title"><b>{{ work.client }}</b></h3>
+                    <p class="card-text">{{ work.description }}</p>
+                    <a href="{{ work.url }}">Show Case Study</a>
+                    {% if work.live-site %}
+                        <a target="_blank" href="{{ page.live-site }}">View Site</a>
+                    {% endif %}
 
                 </div>
             </div>

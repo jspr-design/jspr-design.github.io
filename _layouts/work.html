@@ -22,10 +22,13 @@ custom-stylesheet:
   <a class="btn btn-primary" target="_blank" href="{{ page.live-site }}">View Site</a>
 {% endif %}
 
-{% if work.thumbnail %}
-  <img class="img-fluid" loading="lazy" src="{{ site.baseurl }}/assets/img/{{ work.thumbnail }}" alt="" />
+<img class="img-fluid" loading="lazy" src="{{ site.baseurl }}/assets/img/{{ page.title | downcase | replace: ' ','-' }}.png" alt="" />
+
+
+<!-- {% if work.thumbnail %}
+  <img class="img-fluid" loading="lazy" src="{{ site.baseurl }}/assets/img/{{ work.title }}.png" alt="" />
 {% else %}
   <img class="img-fluid" loading="lazy" src="https://dummyimage.com/1920X16:9/fafafa.png" alt="" />
-{% endif %}
+{% endif %} -->
 
 {{ content }}

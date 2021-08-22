@@ -81,11 +81,12 @@ faq: true
 
 
                     <div class="col-lg-8" style="margin-right: -33.33%" >
-                        {% if work.thumbnail %}
+                        <img class="img-fluid" loading="lazy" src="{{ site.baseurl }}/assets/img/{{ work.title | downcase | replace: ' ','-' }}.png" alt="" />
+                        <!-- {% if work.thumbnail %}
                             <img class="img-fluid" loading="lazy" src="{{ site.baseurl }}/assets/img/{{ work.thumbnail }}" alt="" />
                             {% else %}
                             <img class="img-fluid" loading="lazy" src="https://dummyimage.com/1200X4:3/eeeeee.png" alt="" />
-                        {% endif %}
+                        {% endif %} -->
                     </div>
 
                 </div>
